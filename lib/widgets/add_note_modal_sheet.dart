@@ -20,9 +20,12 @@ class AddNote extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return Padding(
-            padding: const EdgeInsets.all(28.0),
-            child: SingleChildScrollView(child: const AddNoteForm()),
+          return AbsorbPointer(
+            absorbing: state is AddNoteLoading ? true : false,
+            child: Padding(
+              padding: const EdgeInsets.all(28.0),
+              child: SingleChildScrollView(child: const AddNoteForm()),
+            ),
           );
         },
       ),
