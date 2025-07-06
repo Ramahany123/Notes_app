@@ -5,6 +5,7 @@ import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_form_field.dart';
+import 'package:notes_app/widgets/colors_list_view.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({super.key});
@@ -30,7 +31,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               title = value;
             },
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           CustomTextFormField(
             hintText: 'Content',
             maxLines: 5,
@@ -38,7 +39,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subTitle = value;
             },
           ),
-          SizedBox(height: 50),
+          const SizedBox(height: 25),
+          const ColorsListView(),
+          const SizedBox(height: 25),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
@@ -54,7 +57,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       title: title!,
                       subTitle: subTitle!,
                       date: formattedCurrentDate,
-                      color: Color(0xffFFCD7A).toARGB32(),
+                      color: const Color(0xffFFCD7A).toARGB32(),
                     );
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                   } else {
@@ -64,7 +67,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               );
             },
           ),
-          SizedBox(height: 35),
+          const SizedBox(height: 35),
         ],
       ),
     );
