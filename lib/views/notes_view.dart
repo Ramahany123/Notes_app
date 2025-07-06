@@ -16,13 +16,13 @@ class NotesView extends StatelessWidget {
             isScrollControlled: true,
             context: context,
             builder: (context) {
-              return AddNote();
+              return const AddNote();
             },
           );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
-      body: NotesViewBody(),
+      body: const NotesViewBody(),
     );
   }
 }

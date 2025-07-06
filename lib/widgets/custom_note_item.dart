@@ -14,7 +14,7 @@ class NoteItem extends StatelessWidget {
         Navigator.pushNamed(context, EditNoteView.id, arguments: note);
       },
       child: Container(
-        padding: EdgeInsets.only(left: 24, top: 24, bottom: 24),
+        padding: const EdgeInsets.only(left: 24, top: 24, bottom: 24),
         decoration: BoxDecoration(
           color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
@@ -25,7 +25,7 @@ class NoteItem extends StatelessWidget {
             ListTile(
               title: Text(
                 note.title,
-                style: TextStyle(color: Colors.black, fontSize: 30),
+                style: const TextStyle(color: Colors.black, fontSize: 30),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16),
@@ -42,10 +42,10 @@ class NoteItem extends StatelessWidget {
                   note.delete();
                   BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                 },
-                icon: Icon(Icons.delete, color: Colors.black, size: 32),
+                icon: const Icon(Icons.delete, color: Colors.black, size: 32),
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(right: 24.0),
               child: Text(
